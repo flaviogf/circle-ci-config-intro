@@ -1,3 +1,5 @@
 #+TITLE: circle-ci-config-intro
 #+AUTHOR: flaviogf
 #+DATE: [2022-12-11 Sun]
+
+It is a simple project created to follow the config-intro tutorial from Circle CI documentation.
