@@ -1,42 +1,41 @@
 version: 2.1
 jobs:
-  build:
-    Hello-World:
-      docker:
-        - image: cimg/base:2021.04
-          auth:
-            username: flaviogf
-            password: $DOCKERHUB_PASSWORD
-      steps:
-        - run:
-            name: Saying Hello
-            command: |
-              echo 'Hello World'
-              echo 'This is the delivery pipeline'
-    Fetch-Code:
-      docker:
-        - image: cimg/base:2021.04
-          auth:
-            username: flaviogf
-            password: $DOCKERHUB_PASSWORD
-      steps:
-        - checkout
-        - run:
-            name: Getting the Code
-            command: |
-              ls -al
-              echo '^^^Your repo files^^^'
-    Using-Node:
-      docker:
-        - image: cimg/node:17.2
-          auth:
-            username: flaviogf
-            password: $DOCKERHUB_PASSWORD
-      steps:
-        - run:
-            name: Running the Node Container
-            command: |
-              node -v
+  Hello-World:
+    docker:
+      - image: cimg/base:2021.04
+        auth:
+          username: flaviogf
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - run:
+          name: Saying Hello
+          command: |
+            echo 'Hello World'
+            echo 'This is the delivery pipeline'
+  Fetch-Code:
+    docker:
+      - image: cimg/base:2021.04
+        auth:
+          username: flaviogf
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run:
+          name: Getting the Code
+          command: |
+            ls -al
+            echo '^^^Your repo files^^^'
+  Using-Node:
+    docker:
+      - image: cimg/node:17.2
+        auth:
+          username: flaviogf
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - run:
+          name: Running the Node Container
+          command: |
+            node -v
 
 workflows:
   Example-Workflow:
